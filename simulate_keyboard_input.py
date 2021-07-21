@@ -4,22 +4,58 @@ import time
 
 practice = True
 replay_state = False
+turtle4 = False
+chat_model = False
 
-def t4_lr_flag_bisha():
+def release_all_keys():
+    event_list = []
+    event_list.append(keyboard.KeyboardEvent('up', 30, name='a',time = 0.0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 31, name='s',time = 0.01, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.02, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 17, name='w',time = 0.03, modifiers=False, is_keypad=False))
+    keyboard.play(event_list)
+
+    
+def t2_lr_flag_bisha():
+    # print("2龟从左到右  飞腿+必杀")
     event_list = []
     event_list.append(keyboard.KeyboardEvent('up', 30, name='a',time = 0, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('up', 31, name='s',time = 0, modifiers=False, is_keypad=False))
+    
     event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.0, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.02, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.03, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 37, name='k',time = 0.03, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.09, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 37, name='k',time = 0.09, modifiers=False, is_keypad=False))
+    
+    event_list.append(keyboard.KeyboardEvent('down', 36, name='j',time = 0.10, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 17, name='w',time = 0.10, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 36, name='j',time = 0.15, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 17, name='w',time = 0.15, modifiers=False, is_keypad=False))
+    keyboard.play(event_list)
+
+def t2_rl_flag_bisha():
+    # print("2龟从右到左  飞腿+必杀")
+    event_list = []
+    event_list.append(keyboard.KeyboardEvent('up', 30, name='d',time = 0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 31, name='s',time = 0, modifiers=False, is_keypad=False))
+    
+    event_list.append(keyboard.KeyboardEvent('down', 30, name='a',time = 0.0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 30, name='a',time = 0.02, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 30, name='a',time = 0.05, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('down', 37, name='k',time = 0.05, modifiers=False, is_keypad=False))
-    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.06, modifiers=False, is_keypad=False))
-    event_list.append(keyboard.KeyboardEvent('up', 37, name='k',time = 0.06, modifiers=False, is_keypad=False))
-    event_list.append(keyboard.KeyboardEvent('down', 17, name='w',time = 0.08, modifiers=False, is_keypad=False))
-    event_list.append(keyboard.KeyboardEvent('up', 17, name='w',time = 0.09, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 30, name='a',time = 0.09, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 37, name='k',time = 0.09, modifiers=False, is_keypad=False))
+    
+    event_list.append(keyboard.KeyboardEvent('down', 36, name='j',time = 0.10, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 17, name='w',time = 0.10, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 36, name='j',time = 0.15, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 17, name='w',time = 0.15, modifiers=False, is_keypad=False))
     keyboard.play(event_list)
     
 def t4_rl_flag_bisha():
+    # print("4龟从右到左  飞腿+必杀")
     event_list = []
     event_list.append(keyboard.KeyboardEvent('up', 30, name='d',time = 0, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('up', 31, name='s',time = 0, modifiers=False, is_keypad=False))
@@ -32,16 +68,33 @@ def t4_rl_flag_bisha():
     event_list.append(keyboard.KeyboardEvent('down', 17, name='w',time = 0.07, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('up', 17, name='w',time = 0.09, modifiers=False, is_keypad=False))
     keyboard.play(event_list)
+
+def t4_lr_flag_bisha():
+    # print("4龟从左到右  飞腿+必杀")
+    event_list = []
+    event_list.append(keyboard.KeyboardEvent('up', 30, name='a',time = 0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 31, name='s',time = 0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.02, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.03, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 37, name='k',time = 0.05, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.06, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 37, name='k',time = 0.06, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 17, name='w',time = 0.08, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 17, name='w',time = 0.09, modifiers=False, is_keypad=False))
+    keyboard.play(event_list)
+
+
     
 def turtle_4_feitui_bisha():
     pass
 
 def run():
-    interval= 0.04
-    keyboard.send('d')
-    time.sleep(interval)
-    keyboard.send('d',True, False)
-    time.sleep(interval)
+    event_list = []
+    event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.02, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.03, modifiers=False, is_keypad=False))
+    keyboard.play(event_list)
 
 def lr_flyLag():
     event_list = []
@@ -70,6 +123,22 @@ def bailie():
     event_list.append(keyboard.KeyboardEvent('down', 36, name='j',time = 0.02, modifiers=False, is_keypad=False))
     event_list.append(keyboard.KeyboardEvent('up', 36, name='j',time = 0.20, modifiers=False, is_keypad=False))
     keyboard.play(event_list)
+    
+def qianmenhuanshu():
+    cnt = 0
+    print("千门幻术...")
+    release_all_keys()
+    event_list = []
+    event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.0, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.02, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 32, name='d',time = 0.05, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 32, name='d',time = 0.20, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 30, name='a',time = 0.20, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('down', 31, name='s',time = 0.20, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 30, name='a',time = 0.20, modifiers=False, is_keypad=False))
+    event_list.append(keyboard.KeyboardEvent('up', 31, name='s',time = 0.20, modifiers=False, is_keypad=False))
+    keyboard.play(event_list)
+    cnt += 1
 
 
 def tuQiu():
@@ -83,23 +152,32 @@ def tuQiu():
     keyboard.play(event_list)
 
 
+
 def flayLay_tuQiu():
     lr_flyLag()
     time.sleep(0.15)
     tuQiu()
 
 
-
 # event 类型是keyboard.KeyboardEvent
 def on_triggered(event):
     interval= 0.04
-    # Shred 必杀技
-    if  event.name == "o" and event.event_type == "down":
-        # print("Triggered!")
+    global turtle4
+    global chat_model
+    if event.name == 'esc' and event.event_type == "down":
+        chat_model = bool(1 - chat_model)
+        print("chat model: ", chat_model)
+    if chat_model:
+        return
+        
+    # Shred 百裂拳
+    if  event.name == "y" and event.event_type == "down":
         bailie()
-    # 吐球
-    elif event.name == "n" and event.event_type == "down":
-        tuQiu()
+    
+    # Shred 千门幻术
+    if event.name == 'm' and event.event_type == "down":
+        qianmenhuanshu()
+    
     # 跑起来 成功
     elif event.name == 'r'and event.event_type == "down":
         run()
@@ -109,25 +187,36 @@ def on_triggered(event):
     # 右飞腿
     elif event.name == 'l'and event.event_type == "down":
         lr_flyLag()
-    # # 飞行+吐球
-    # elif event.name == 'l'and event.event_type == "down":
-    #     flayLay_tuQiu()
+    # 4龟飞腿必杀从左到右
     elif event.name =="e" and event.event_type == "down":
-        t4_lr_flag_bisha()
+        if turtle4 is True:
+            t4_lr_flag_bisha()
+        else:
+            t2_lr_flag_bisha()
+    # 4龟飞腿必杀从右到左
     elif event.name =="q" and event.event_type == "down":
-        t4_rl_flag_bisha()
+        if turtle4 is True:
+            t4_rl_flag_bisha()
+        else:
+            t2_rl_flag_bisha()
     elif event.name == 'x' and event.event_type == "down":
-        global practice
-        global replay_state
-        practice = bool(1- practice)
-        replay_state = bool(1 - replay_state)
-        keyboard.unhook_all()
-        print("Replay state")
+        turtle4 = bool(1-turtle4)
+        if turtle4 :
+            print("turtle 4 model : ", turtle4)
+        else :
+            print("turtle 2 model : ", bool(1-turtle4))
+        # global practice
+        # global replay_state
+        # practice = bool(1- practice)
+        # replay_state = bool(1 - replay_state)
+        # keyboard.unhook_all()
+        # print("Replay state")
+    
 
 ## 录制技能
 def recordSkill():
     keyboard.start_recording();
-    time.sleep(4);
+    time.sleep(5);
     eventlist = keyboard.stop_recording();
     
     i = 0
@@ -151,10 +240,8 @@ def recordSkill():
 
 
 if __name__ == "__main__":
-    while True:
-        if practice:
-            f = keyboard.hook(on_triggered)
-            time.sleep(2000)
-        elif replay_state:
-            recordSkill()
+    
+    f = keyboard.hook(on_triggered)
+    time.sleep(2000)
+    recordSkill()
         
